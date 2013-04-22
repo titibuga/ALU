@@ -3,4 +3,6 @@ ALU
 
 Aritithmetic and Logic Unit
 
-Grupo: Gervásio, Mateus, Victor, Vinícius Vendramini
+Algebra Booleana - 2013
+
+Grupo: Gervásio, Mateus, Victor, Vinícius Vendramini.
