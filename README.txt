@@ -33,7 +33,7 @@ Na implementação da ALU foram utilizados varios subcircuitos para facilitar a 
    *Final Divider: Circuito final para implementação da divisão. Funciona de forma similar ao Final Multiplier. Já que o circuito divisão foi concepicionado para lidar com números positivos, primeiro extrai-se o módulo dos números envolvidos, realiza-se a operção e por fim verifica-se se o output deve ser positivo ou negativo e o valor cabível é o output.
    *Resto: Este circuito calcula o resto da divisão entre dois números pela definição se temos dois números A e B. Então (pelo algoritmo da divisão) A = B*Q + R, onde Q é o quociente da divisão inteira e R é o resto da divisão.
  Temos então: R = A - B * (A / B).
- Então, primeiro calcula-se o quociente de A por B, então multiplica-se esse quociente por B e subtrai-se esse resultado de A. O resultado será o output, o resto.
+ Então, primeiro calcula-se o quociente de A por B, então multiplica-se esse quociente por B e subtrai-se esse resultado de A. Optamos no design por retornar sempre o resto positivo; para isso passamos o resto por um operador que devolve o módulo dele, e esse resultado será o output.
 
  *main: Circuito principal do EP2, implementado a ALU em si. Nele há pinos para seleção de A, B e S (que definirá a operação a ser realizada). Passamos A e B como input para o circuito que realiza cada operação e guarda-se o resultado. Então, os resultados das operações são passados como entrada para um multiplexer, cuja saída é determinada por S, na convenção estabelecida no enunciado. A saída do multiplexer é então usada para definir os bits do resultado final. 
  Há também flags que indicam se houve overflow em alguma operação.
